@@ -1,11 +1,11 @@
-import API from "./API.js"; // add .js
+import API from "./API.js"; // add ".js"
 
 export async function loadData() {
   app.store.menu = await API.fetchMenu();
 }
 
-export async function getProductionById(id) {
-  if ((app.store.menu = null)) {
+export async function getProductById(id) {
+  if (app.store.menu == null) {
     await loadData();
   }
   for (let c of app.store.menu) {
